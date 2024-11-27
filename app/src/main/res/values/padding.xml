@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Padding10_20_20_10">
+        <item name="android:paddingStart">10dp</item>d
+        <item name="android:paddingTop">20dp</item>d
+        <item name="android:paddingBottom">20dp</item>d
+        <item name="android:paddingEnd">10dp</item>d
+    </style>
+</resources>

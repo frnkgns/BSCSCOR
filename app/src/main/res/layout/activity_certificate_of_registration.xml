@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CertificateOfRegistration"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:id="@+id/profilepicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="20dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/oval"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-091823-323"
+            android:layout_marginStart="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/saveto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/greenbtn"
+                android:text="Save" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/profilepicture">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="28dp"
+            android:gravity="end">
+            <TextView
+                android:id="@+id/previewbtn"
+                style="@style/CustomTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bluebtn"
+                android:padding="10dp"
+                android:text="PREVIEW CERTIFICATE"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:id="@+id/editcertbtn"
+                style="@style/CustomTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/whitebtn"
+                android:padding="10dp"
+                android:text="EDIT CERTIFICATE"
+                android:layout_marginStart="10dp" />
+            <TextView
+                android:id="@+id/downloadcert"
+                style="@style/CustomTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/greenbtn"
+                android:padding="10dp"
+                android:text="DOWNLOAD CERTIFICATE"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <!--region Preview Certificate-->
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/edgewhitebackground"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/profilepicture">
+            <!--region Layout 1-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toplogolayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:id="@+id/logolipa"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/lipalogo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kolehiyo ng lungsod ng Lipa"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/logolipa"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@id/text2"
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barangay Marawoy, Lipa City, Batangas"
+                    app:layout_constraintStart_toEndOf="@id/logolipa"
+                    app:layout_constraintTop_toBottomOf="@id/text1" />
+
+                <TextView
+                    style="@style/CustomTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(043) 774-2420"
+                    app:layout_constraintStart_toEndOf="@id/logolipa"
+                    app:layout_constraintTop_toBottomOf="@id/text2" />
+
+                <TextView
+                    style="@style/CustomTextStyle"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginEnd="-2dp"
+                    android:background="@drawable/sharp_edges2"
+                    android:paddingBottom="3dp"
+                    android:text="Student's Copy"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:src="@drawable/enrolled"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--        endregion-->
+            <!--        region Layout 2-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/certificatetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CERTIFICATE OF REGISTRATION"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/leftdata"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/certificatetxt">
+
+                    <TextView
+                        android:id="@+id/studentid"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Student #: 12345678" />
+
+                    <TextView
+                        android:id="@+id/studentname"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Name: Rizal Protacioal Jr." />
+
+                    <TextView
+                        android:id="@+id/studentcourse"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Student #: 12345678" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/certificatetxt">
+
+                    <TextView
+                        android:id="@+id/studentdate"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Date: 18/07/2024" />
+
+                    <TextView
+                        android:id="@+id/studentyear"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="A.Y.: First Semester School Year 2024-2025"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/studentdate" />
+
+                    <TextView
+                        android:id="@+id/studentlevel"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Level: 3RD YEAR 1ST SEMESTER"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/studentyear" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--        endregion-->
+            <!--region Layout 3-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/code"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sharp_edges2"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/codetext1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            android:paddingStart="5dp"
+                            android:text="Code"
+                            tools:ignore="MissingConstraints" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/coderecyclerview1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintTop_toBottomOf="@id/codetext1"
+                            tools:ignore="MissingConstraints" />
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/description"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sharp_edges2"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/unit"
+                    app:layout_constraintStart_toEndOf="@id/code"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/desctext1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            android:paddingStart="5dp"
+                            android:text="Description"
+                            tools:ignore="MissingConstraints" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/descriptionrecyclerview2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintTop_toBottomOf="@id/desctext1"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            android:text="Total Units"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            tools:ignore="MissingConstraints"
+                            android:textAlignment="textEnd"
+                            android:paddingEnd="5dp"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/unit"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sharp_edges2"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/assessment"
+                    app:layout_constraintStart_toEndOf="@id/description"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/unitxt1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            android:paddingStart="5dp"
+                            android:text="Unit"
+                            tools:ignore="MissingConstraints" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/unitrecyclerview1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintTop_toBottomOf="@id/unitxt1"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/totalunit"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/sharp_edges2"
+                            android:paddingStart="5dp"
+                            android:text="24"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/assessment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sharp_edges2"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/signature"
+                    app:layout_constraintStart_toEndOf="@id/unit"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/CustomTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sharp_edges2"
+                        android:paddingStart="5dp"
+                        android:text="Assessment Fees" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/assessmentrecyclerview1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerviewnumber1"
+                            tools:ignore="MissingConstraints" />
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/assessmentrecyclerviewnumber1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintStart_toEndOf="@id/assessmentrecyclerview1"
+                            tools:ignore="MissingConstraints" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/sharp_edges2"
+                        android:padding="1dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Total Assessment 5,110"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="1dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Amount Paid 0 SCHOLAR"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/signature"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#737373" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Students Signature" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:text="Recommended by: " />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#737373" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dean"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:text="Approved by: " />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#737373" />
+
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Registrar"
+                            android:textAlignment="center" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--endregion-->
+            <!--region Layout 4-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="NOTE: Subject taken without passing the prescribed pre-requisite subjects will not be given credit"
+                    android:textSize="6sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--endregion-->
+        </LinearLayout>
+        <!--        endregion-->
+        <include
+            android:id="@+id/editcertiticatelayout"
+            layout="@layout/editcertificate" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/baseline_info_outline_24"
+            android:tooltipText="Kolehiyo ng Lungsod ng Lipa Other Information"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878362929848",
+    "project_id": "bscs-cor",
+    "storage_bucket": "bscs-cor.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878362929848:android:036384b289b9f88e69624d",
+        "android_client_info": {
+          "package_name": "com.example.bscscor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-34iQYOyZlqfc-nSQ5_lZcb_CaecmvGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
