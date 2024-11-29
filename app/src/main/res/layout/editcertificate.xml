@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CertificateOfRegistration">
+    tools:context=".CertificateOfRegistration"
+    android:visibility="visible">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -117,23 +118,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Student #: 12345678" />
+                    android:hint="Student #: 12345678"
+                    android:textColorHint="@color/black"/>
 
                 <EditText
                     android:id="@+id/editstudentname"
                     style="@style/CustomTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
                     android:layout_marginTop="5dp"
-                    android:hint="Name: Rizal Protacioal Jr." />
+                    android:hint="Rizal Protacioal Jr." />
 
                 <EditText
                     android:id="@+id/editstudentcourse"
                     style="@style/CustomTextStyle"
+                    android:textColorHint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Student #: 12345678" />
+                    android:hint="Bachelor of Science in Computer Science" />
 
                 <TextView
                     android:id="@+id/addcode"
@@ -162,10 +166,11 @@
                 <EditText
                     android:id="@+id/editstudentdate"
                     style="@style/CustomTextStyle"
+                    android:textColorHint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Date: 18/07/2024" />
+                    android:hint="18/07/2024" />
 
                 <EditText
                     android:id="@+id/editstudentyear"
@@ -173,7 +178,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="A.Y.: First Semester School Year 2024-2025"
+                    android:textColorHint="@color/black"
+                    android:hint="First Semester School Year 2024-2025"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/studentdate" />
 
@@ -183,7 +189,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:hint="Level: 3RD YEAR 1ST SEMESTER"
+                    android:textColorHint="@color/black"
+                    android:hint="3RD YEAR 1ST SEMESTER"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/studentyear" />
 
@@ -199,7 +206,8 @@
                     android:text="Add Assessment"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toTopOf="@+id/code"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone"/>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -264,6 +272,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
                     <TextView
                         android:id="@+id/desctext"
                         style="@style/CustomTextStyle"
@@ -273,25 +282,26 @@
                         android:paddingStart="5dp"
                         android:text="Description"
                         tools:ignore="MissingConstraints" />
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/descriptionrecyclerview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:listitem="@layout/textrecyclerview"
                         app:layout_constraintTop_toBottomOf="@id/desctext"
-                        tools:ignore="MissingConstraints" />
+                        tools:ignore="MissingConstraints"
+                        tools:listitem="@layout/textrecyclerview" />
 
                     <TextView
                         style="@style/CustomTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/sharp_edges2"
+                        android:paddingEnd="5dp"
                         android:text="Total Units"
+                        android:textAlignment="textEnd"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        tools:ignore="MissingConstraints"
-                        android:textAlignment="textEnd"
-                        android:paddingEnd="5dp"/>
+                        tools:ignore="MissingConstraints" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
@@ -333,7 +343,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/sharp_edges2"
                         android:paddingStart="5dp"
-                        android:text="24"
+                        android:text="0"
                         android:textStyle="bold"
                         android:textAlignment="center"
                         app:layout_constraintBottom_toBottomOf="parent" />
@@ -370,6 +380,7 @@
                         app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerviewnumber"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="0dp"
                         tools:listitem="@layout/textrecyclerview" />
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -397,6 +408,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/amountpaid"
                     style="@style/CustomTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

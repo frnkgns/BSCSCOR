@@ -92,6 +92,7 @@
             android:hint="enter password"
             android:textAlignment="center"
             android:textColor="@color/black"
+            android:inputType="textPassword"
             android:textColorHint="@color/black" />
 
         <Button

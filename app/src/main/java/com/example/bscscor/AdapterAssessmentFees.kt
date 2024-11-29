@@ -14,8 +14,7 @@ class AdapterAssessmentFees(private val fees: List<String>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeeViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.textrecyclerview, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.textrecyclerview, parent, false)
         return FeeViewHolder(view)
     }
 

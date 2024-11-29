@@ -17,10 +17,13 @@
         android:padding="20dp"
         android:gravity="center_vertical">
         <ImageView
+            android:id="@+id/profilepic"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/oval"/>
+            android:background="@drawable/oval"
+            android:src="@drawable/ictlogo"/>
         <TextView
+            android:id="@+id/savedid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="24-091823-323"
@@ -29,28 +32,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:gravity="end"
-            android:visibility="gone">
+            android:gravity="end">
             <TextView
-                android:id="@+id/saveto"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textColor="@color/white"
-                android:background="@drawable/greenbtn"
-                android:text="Save" />
+                android:background="@drawable/black"
+                android:text="Logout"
+                android:textSize="8dp"/>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/profilepicture">
+        app:layout_constraintTop_toBottomOf="@id/profilepicture"
+        tools:layout_editor_absoluteX="74dp">
+
         <LinearLayout
+            android:id="@+id/layoutbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="28dp"
             android:gravity="end">
+
             <TextView
                 android:id="@+id/previewbtn"
                 style="@style/CustomTextStyle"
@@ -59,38 +68,39 @@
                 android:background="@drawable/bluebtn"
                 android:padding="10dp"
                 android:text="PREVIEW CERTIFICATE"
-                android:textColor="@color/white"
-                />
+                android:textColor="@color/white" />
+
             <TextView
                 android:id="@+id/editcertbtn"
                 style="@style/CustomTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/whitebtn"
                 android:padding="10dp"
-                android:text="EDIT CERTIFICATE"
-                android:layout_marginStart="10dp" />
+                android:text="EDIT CERTIFICATE" />
+
             <TextView
                 android:id="@+id/downloadcert"
                 style="@style/CustomTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/greenbtn"
                 android:padding="10dp"
                 android:text="DOWNLOAD CERTIFICATE"
-                android:textColor="@color/white"
-                android:layout_marginStart="10dp" />
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <!--region Preview Certificate-->
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/edgewhitebackground"
             android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@id/profilepicture">
             <!--region Layout 1-->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -258,7 +268,7 @@
 
                 <LinearLayout
                     android:id="@+id/code"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:background="@drawable/sharp_edges2"
                     android:orientation="vertical"
@@ -279,15 +289,18 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/sharp_edges2"
                             android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
                             android:text="Code"
                             tools:ignore="MissingConstraints" />
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/coderecyclerview1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:listitem="@layout/textrecyclerview"
                             app:layout_constraintTop_toBottomOf="@id/codetext1"
-                            tools:ignore="MissingConstraints" />
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/textrecyclerview" />
+
                         <TextView
                             style="@style/CustomTextStyle"
                             android:layout_width="match_parent"
@@ -297,6 +310,7 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/description"
                     android:layout_width="0dp"
@@ -311,6 +325,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
                         <TextView
                             android:id="@+id/desctext1"
                             style="@style/CustomTextStyle"
@@ -318,34 +333,37 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/sharp_edges2"
                             android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
                             android:text="Description"
                             tools:ignore="MissingConstraints" />
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/descriptionrecyclerview2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:listitem="@layout/textrecyclerview"
                             app:layout_constraintTop_toBottomOf="@id/desctext1"
-                            tools:ignore="MissingConstraints" />
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/textrecyclerview" />
 
                         <TextView
                             style="@style/CustomTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/sharp_edges2"
+                            android:paddingEnd="5dp"
                             android:text="Total Units"
+                            android:textAlignment="textEnd"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            tools:ignore="MissingConstraints"
-                            android:textAlignment="textEnd"
-                            android:paddingEnd="5dp"/>
+                            tools:ignore="MissingConstraints" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/unit"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:background="@drawable/sharp_edges2"
                     android:orientation="vertical"
@@ -365,26 +383,28 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/sharp_edges2"
                             android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
                             android:text="Unit"
                             tools:ignore="MissingConstraints" />
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/unitrecyclerview1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:listitem="@layout/textrecyclerview"
                             app:layout_constraintTop_toBottomOf="@id/unitxt1"
-                            tools:ignore="MissingConstraints" />
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/textrecyclerview" />
 
                         <TextView
-                            android:id="@+id/totalunit"
+                            android:id="@+id/totalunit1"
                             style="@style/CustomTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/sharp_edges2"
                             android:paddingStart="5dp"
-                            android:text="24"
-                            android:textStyle="bold"
+                            android:text="0"
                             android:textAlignment="center"
+                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -407,6 +427,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/sharp_edges2"
                         android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
                         android:text="Assessment Fees" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -416,26 +437,28 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/assessmentrecyclerview1"
                             style="@style/CustomTextStyle"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:listitem="@layout/textrecyclerview"
                             app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerviewnumber1"
-                            tools:ignore="MissingConstraints" />
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteY="0dp"
+                            tools:listitem="@layout/textrecyclerview" />
+
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/assessmentrecyclerviewnumber1"
                             style="@style/CustomTextStyle"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:listitem="@layout/textrecyclerview"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/assessmentrecyclerview1"
-                            tools:ignore="MissingConstraints" />
-
+                            tools:ignore="MissingConstraints"
+                            tools:listitem="@layout/textrecyclerview" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
                     <TextView
                         style="@style/CustomTextStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/sharp_edges2"
@@ -446,6 +469,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/amountpaid1"
                         style="@style/CustomTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -458,7 +482,7 @@
 
                 <LinearLayout
                     android:id="@+id/signature"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp"
@@ -493,7 +517,7 @@
                             style="@style/CustomTextStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginBottom="20dp"
                             android:text="Recommended by: " />
 
                         <com.google.android.material.imageview.ShapeableImageView
@@ -518,7 +542,7 @@
                             style="@style/CustomTextStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="30dp"
+                            android:layout_marginBottom="20dp"
                             android:text="Approved by: " />
 
                         <com.google.android.material.imageview.ShapeableImageView
@@ -557,7 +581,8 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="NOTE: Subject taken without passing the prescribed pre-requisite subjects will not be given credit"
-                    android:textSize="6sp"
+                    android:textColor="@color/black"
+                    android:textSize="3sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -568,10 +593,10 @@
         <include
             android:id="@+id/editcertiticatelayout"
             layout="@layout/editcertificate" />
-
-
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/collegeinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"

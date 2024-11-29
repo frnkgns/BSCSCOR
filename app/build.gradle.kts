@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 android {
@@ -44,6 +45,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.database)
+    implementation(libs.play.services.cast.tv)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -52,5 +54,12 @@ dependencies {
     implementation(kotlin("script-runtime"))
     implementation ("com.google.firebase:firebase-database:20.0.5")
 
+    implementation(platform("io.github.jan-tennert.supabase:bom:3.0.2"))
+    implementation ("io.github.jan-tennert.supabase:storage-kt:$3.0.2")
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
+    implementation("io.ktor:ktor-client-android:3.0.1")
 
+    implementation("io.github.jan-tennert.supabase:storage-kt:1.0.0")
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
 }
