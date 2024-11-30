@@ -27,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="24-091823-323"
+            android:textColor="@color/black"
             android:layout_marginStart="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -432,32 +433,34 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/assessmentrecyclerview1"
-                            style="@style/CustomTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerviewnumber1"
-                            app:layout_constraintStart_toStartOf="parent"
-                            tools:ignore="MissingConstraints"
-                            tools:layout_editor_absoluteY="0dp"
-                            tools:listitem="@layout/textrecyclerview" />
+                        android:layout_height="wrap_content"
+                        android:minHeight="160dp">
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/assessmentrecyclerviewnumber1"
                             style="@style/CustomTextStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerview1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints"
+                            tools:layout_editor_absoluteY="0dp"
+                            tools:listitem="@layout/textrecyclerview" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/assessmentrecyclerview1"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/assessmentrecyclerview1"
+                            app:layout_constraintStart_toEndOf="@id/assessmentrecyclerviewnumber1"
                             tools:ignore="MissingConstraints"
                             tools:listitem="@layout/textrecyclerview" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <TextView
                         style="@style/CustomTextStyle"
+                        android:id="@+id/assessmentfeetxt1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -608,6 +611,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/baseline_info_outline_24"
-            android:tooltipText="Kolehiyo ng Lungsod ng Lipa Other Information"/>
+            android:tooltipText="Brgy. Marawouy, Lipa City Batangas\n(043) 774 2420 facebook:KLLOfficial"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,42 +12,36 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
+
         <EditText
-            android:id="@+id/subjectCodeEditText"
+            android:id="@+id/assessmennamettxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Subject Code"
+            android:hint="Name of assessment"
             android:inputType="text"
             android:background="@drawable/sharp_edges"
             android:textColorHint="@color/black"
             android:padding="20dp"
             android:layout_marginBottom="10dp"/>
+
         <EditText
-            android:id="@+id/subjectNameEditText"
+            android:id="@+id/assessmentfeetxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Subject Name"
-            android:inputType="text"
-            android:background="@drawable/sharp_edges"
-            android:textColorHint="@color/black"
-            android:padding="20dp"
-            android:layout_marginBottom="10dp"/>
-        <EditText
-            android:id="@+id/professorEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Unit"
+            android:hint="Fee"
             android:inputType="number"
             android:background="@drawable/sharp_edges"
             android:textColorHint="@color/black"
             android:padding="20dp" />
+
         <Button
-            android:id="@+id/savesubjectbtn"
+            android:id="@+id/saveAssessment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
             android:backgroundTint="#6CA468"
             android:textColor="@color/white"
             android:layout_marginTop="16dp" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

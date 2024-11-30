@@ -6,9 +6,11 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var Password: EditText
     private lateinit var SignUpBtn: TextView
     private lateinit var Profile: ImageView
+    private lateinit var progreeBar: ProgressBar
     private lateinit var openimagebtn: Button
     private val IMAGE_PICK_REQUEST = 1001
 
@@ -58,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         Username = findViewById(R.id.username)
         Password = findViewById(R.id.password)
+        progreeBar = findViewById(R.id.Porgressbar)
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
@@ -81,6 +85,8 @@ class MainActivity : AppCompatActivity() {
                     .show()
                 return@setOnClickListener
             }
+
+            progreeBar.visibility = View.VISIBLE
 
             // Reference to Firebase Realtime Database
             val database = FirebaseDatabase.getInstance()
@@ -111,6 +117,7 @@ class MainActivity : AppCompatActivity() {
                                             editor.apply()
                                         }
                                     )
+                                    progreeBar.visibility = View.GONE
                                     return
                                 } else {
                                     // Password is incorrect
@@ -119,6 +126,8 @@ class MainActivity : AppCompatActivity() {
                                         "Incorrect password!",
                                         Toast.LENGTH_SHORT
                                     ).show()
+                                    progreeBar.visibility = View.GONE
+
                                     return
                                 }
                             }
@@ -129,6 +138,8 @@ class MainActivity : AppCompatActivity() {
                                 "Account not found!",
                                 Toast.LENGTH_SHORT
                             ).show()
+
+                            progreeBar.visibility = View.GONE
                         }
                     }
 
@@ -138,6 +149,8 @@ class MainActivity : AppCompatActivity() {
                             "Error: ${error.message}",
                             Toast.LENGTH_SHORT
                         ).show()
+
+                        progreeBar.visibility = View.GONE
                     }
                 })
         }
