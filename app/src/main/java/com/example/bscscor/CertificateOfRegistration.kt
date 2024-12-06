@@ -153,11 +153,8 @@ class CertificateOfRegistration : AppCompatActivity() {
         assessmentRecyclerviewnumber1 = findViewById(R.id.assessmentrecyclerviewnumber1)
         assessmentRecyclerviewnumber1.layoutManager = LinearLayoutManager(this)
 
-        val amounttxt = "Amount Paid 0 \n Scholar"
         Amountpaid = findViewById(R.id.amountpaid)
         Amountpaid1 = findViewById(R.id.amountpaid1)
-        Amountpaid.text = amounttxt
-        Amountpaid1.text = amounttxt
 
         TotalAssessment = findViewById(R.id.TotalAssessment)
         TotalAssessment1 = findViewById(R.id.assessmentfeetxt1)
@@ -363,7 +360,7 @@ class CertificateOfRegistration : AppCompatActivity() {
 
                     // Update the total
                     totalAssessmentValue = totalAssessmentSum
-                    TotalAssessment.text = "Total Assessment $totalAssessmentValue"
+                    TotalAssessment.text = "$totalAssessmentValue"
 
                     // Dismiss the dialog
                     dialog.dismiss()

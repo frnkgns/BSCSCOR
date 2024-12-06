@@ -127,7 +127,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColorHint="@color/black"
-                    android:layout_marginTop="5dp"
                     android:hint="Rizal Protacioal Jr." />
 
                 <EditText
@@ -136,7 +135,6 @@
                     android:textColorHint="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:hint="Bachelor of Science in Computer Science" />
 
                 <LinearLayout
@@ -194,7 +192,6 @@
                     style="@style/CustomTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:textColorHint="@color/black"
                     android:hint="First Semester School Year 2024-2025"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -205,7 +202,6 @@
                     style="@style/CustomTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:textColorHint="@color/black"
                     android:hint="3RD YEAR 1ST SEMESTER"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -406,14 +402,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="160dp">
+                    android:minHeight="100dp">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/assessmentrecyclerview"
                         style="@style/CustomTextStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toStartOf="@id/assessmentrecyclerviewnumber"
+                        android:minWidth="100dp"
                         app:layout_constraintStart_toStartOf="parent"
                         tools:ignore="MissingConstraints"
                         tools:layout_editor_absoluteY="0dp"
@@ -425,35 +421,87 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/assessmentrecyclerview"
+                        android:minWidth="30dp"
                         tools:ignore="MissingConstraints"
                         tools:listitem="@layout/textrecyclerview" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/TotalAssessment"
-                    style="@style/CustomTextStyle"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:background="@drawable/sharp_edges2"
-                    android:padding="1dp"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="Total Assessment 5110"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/amountpaid"
-                    style="@style/CustomTextStyle"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="1dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="Total Assessment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints" />
+                    <TextView
+                        android:id="@+id/TotalAssessment"
+                        style="@style/CustomTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="1dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="5110"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="1dp"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="Amount Paid 0 SCHOLAR"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/amountpaid"
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="Amount Paid"
+                            android:textStyle="bold" />
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="SCHOLAR"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end">
+                        <TextView
+                            style="@style/CustomTextStyle"
+                            android:layout_gravity="end"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:text="0"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -485,7 +533,9 @@
                             android:background="#737373" />
 
                         <TextView
-                            style="@style/CustomTextStyle"
+                            android:textColor="@color/black"
+                            android:textSize="5sp"
+                            android:textAlignment="center"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Students Signature" />
@@ -500,11 +550,20 @@
                         app:layout_constraintBottom_toTopOf="@id/signature3">
 
                         <TextView
-                            style="@style/CustomTextStyle"
-                            android:layout_width="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="5sp"
+                            android:textAlignment="center"                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="30dp"
                             android:text="Recommended by: " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textAlignment="center"
+                            android:textSize="5sp"
+                            android:text="ANGELO FREDERICK A. TOH MIT "
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"/>
 
                         <com.google.android.material.imageview.ShapeableImageView
                             android:layout_width="match_parent"
@@ -512,11 +571,11 @@
                             android:background="#737373" />
 
                         <TextView
-                            style="@style/CustomTextStyle"
-                            android:layout_width="match_parent"
+                            android:textColor="@color/black"
+                            android:textSize="5sp"
+                            android:textAlignment="center"                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Dean"
-                            android:textAlignment="center" />
+                            android:text="Dean" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/signature3"
@@ -527,8 +586,9 @@
                         app:layout_constraintTop_toBottomOf="@id/signature2">
 
                         <TextView
-                            style="@style/CustomTextStyle"
-                            android:layout_width="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="5sp"
+                            android:textAlignment="center"                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="30dp"
                             android:text="Approved by: " />
@@ -539,7 +599,8 @@
                             android:background="#737373" />
 
                         <TextView
-                            style="@style/CustomTextStyle"
+                            android:textColor="@color/black"
+                            android:textSize="5sp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Registrar"
